@@ -2,7 +2,9 @@
 
 <!-- 이 공간에는 블로그 글들의 목록을 보여줄 예정 -->
 {% for post in posts %}
-<h3>제목: {{ post.title }}</h3>
+<a href="{% url 'detail' post.id %}">
+    <h3>제목: {{ post.title }}</h3>
+</a>
 <h4>작성 날짜: {{ post.date }}</h4>
 
 {% endfor %}
