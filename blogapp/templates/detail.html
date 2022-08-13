@@ -6,3 +6,7 @@
 
 <h3>본문</h3>
 {{ blog_detail.body }}
+
+{% if blog_detail.photo %}
+<img src="{{ blog_detail.photo.url }}" alt="" height="600">
+{% endif %}

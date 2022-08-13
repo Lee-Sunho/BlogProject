@@ -43,8 +43,8 @@ def formcreate(request):
 
 
 def modelformcreate(request):
-    if request.method == 'POST':
-        form = BlogModelForm(request.POST)
+    if request.method == 'POST' or request.method == 'FILES':
+        form = BlogModelForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('home')
