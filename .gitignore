@@ -1,0 +1,5 @@
+media
+migrations
+__pychache__
+db.sqlite3
+*.cpython
