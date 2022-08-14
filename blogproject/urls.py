@@ -1,6 +1,7 @@
 from unicodedata import name
 from django.contrib import admin
 from django.urls import path
+from accounts import views as accounts_views
 from blogapp import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -22,7 +23,11 @@ urlpatterns = [
     # 127.0.0.1:8000/detail/1
     path('detail/<int:blog_id>', views.detail, name='detail'),
 
-    path('create_comment/<int:blog_id>', views.create_comment, name='create_comment')
+    path('create_comment/<int:blog_id>', views.create_comment, name='create_comment'),
+
+    path('login/', accounts_views.login, name='login'),
+
+    path('logout/', accounts_views.logout, name='logout')
 
 ]
 
